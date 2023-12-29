@@ -18,18 +18,13 @@ NC='\033[0m'
 LC='\033[1;36m'
 
 restart_tool() {
-	echo " "
-	while true; do
-	   echo "start tools again? (y/n)"
-	   read -p "" yn
-	   case $yn in
-		[Yy]* ) start_tools;;
+	read -p $'\nStart tools again? [Y/n] ' yn
+	case $yn in
 		[Nn]* ) 
-		clear
-		exit;;   
-		* ) echo "please choose yes or no";;
-	    esac
-	done
+		    clear
+		    exit;;   
+		* ) start_tools;;
+	esac
 }
 
 banner() {
